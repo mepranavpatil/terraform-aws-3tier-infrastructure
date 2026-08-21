@@ -36,6 +36,7 @@ resource "aws_instance" "web2" {
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
   ]
+  key_name = var.key_name
 
   user_data = file("${path.module}/userdata.sh")
 
