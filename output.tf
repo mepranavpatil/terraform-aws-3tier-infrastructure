@@ -7,19 +7,19 @@ output "vpc_cidr" {
 }
 
 output "public_subnet_a_id" {
-  value = aws_subnet.public-a.id
+  value = aws_subnet.public_a.id
 }
 
 output "public_subnet_b_id" {
-  value = aws_subnet.public-b.id
+  value = aws_subnet.public_b.id
 }
 
 output "private_subnet_a_id" {
-  value = aws_subnet.private-a.id
+  value = aws_subnet.private_a.id
 }
 
 output "private_subnet_b_id" {
-  value = aws_subnet.private-b.id
+  value = aws_subnet.private_b.id
 }
 
 output "internet_gateway_id" {
