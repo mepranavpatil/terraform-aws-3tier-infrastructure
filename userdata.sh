@@ -1,7 +1,9 @@
 #!/bin/bash
-yum update -y
-yum install nginx -y
-yum install git -y
-systemctl start nginx
+
+dnf update -y
+dnf install nginx -y
+
 systemctl enable nginx
-systemctl restart nginx
+systemctl start nginx
+
+echo "<h1>Hello from $(hostname)</h1>" > /usr/share/nginx/html/index.html

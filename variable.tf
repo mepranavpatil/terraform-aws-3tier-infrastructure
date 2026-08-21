@@ -28,3 +28,8 @@ variable "mypublic_ip" {
   description = "Your public IP address for SSH access"
   type        = string
 }
+
+variable "instance_type" {
+  description = "Instance type for EC2 instances"
+  type        = string
+}
