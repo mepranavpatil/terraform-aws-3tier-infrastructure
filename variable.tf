@@ -23,3 +23,8 @@ variable "private_subnet_a_cidr" {
 variable "private_subnet_b_cidr" {
   type = string
 }
+
+variable "mypublic_ip" {
+  description = "Your public IP address for SSH access"
+  type        = string
+}
