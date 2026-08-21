@@ -7,37 +7,37 @@ resource "aws_vpc" "main" {
     Name = "3tier-vpc"
   }    
 }
-resource "aws_subnet" "public-a" {
+resource "aws_subnet" "public_a" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.public_subnet_a_cidr
-  availability_zone = var.region 
+  availability_zone = "ap-south-1a" 
   map_public_ip_on_launch = true
   tags = {
     Name = "public-subnet-a"
   }
 }
 
-resource "aws_subnet" "public-b" {
+resource "aws_subnet" "public_b" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.public_subnet_b_cidr
-  availability_zone = var.region 
+  availability_zone = "ap-south-1b"
   map_public_ip_on_launch = true
   tags = {
     Name = "public-subnet-b"
   }
 }
-resource "aws_subnet" "private-a" {
+resource "aws_subnet" "private_a" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_a_cidr
-  availability_zone = var.region 
+  availability_zone = "ap-south-1a" 
   tags = {
     Name = "private-subnet-a"
   }
 }
-resource "aws_subnet" "private-b" {
+resource "aws_subnet" "private_b" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_b_cidr
-  availability_zone = var.region 
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "private-subnet-b"
   }
@@ -73,22 +73,22 @@ resource "aws_route_table" "private" {
   }
 }
 
-resource "aws_route_table_association" "public-a" {
+resource "aws_route_table_association" "public_a" {
   subnet_id      = aws_subnet.public-a.id
   route_table_id = aws_route_table.public.id
 }
   
-resource "aws_route_table_association" "public-b" {
+resource "aws_route_table_association" "public_b" {
   subnet_id      = aws_subnet.public-b.id
   route_table_id = aws_route_table.public.id
 }
 
-resource "aws_route_table_association" "private-a" {
+resource "aws_route_table_association" "private_a" {
   subnet_id      = aws_subnet.private-a.id
   route_table_id = aws_route_table.private.id
 }
 
-resource "aws_route_table_association" "private-b" {
+resource "aws_route_table_association" "private_b" {
   subnet_id      = aws_subnet.private-b.id
   route_table_id = aws_route_table.private.id
 }

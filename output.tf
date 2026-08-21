@@ -44,3 +44,11 @@ output "ec2_security_group_id" {
 output "rds_security_group_id" {
   value = aws_security_group.rds_sg.id
 }
+
+output "web1_public_ip" {
+  value = aws_instance.web1.public_ip
+}
+
+output "web2_public_ip" {
+  value = aws_instance.web2.public_ip
+}

@@ -13,7 +13,7 @@ resource "aws_instance" "web1" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
 
-  subnet_id = aws_subnet.public-a.id
+  subnet_id = aws_subnet.public_a.id
 
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
@@ -30,7 +30,7 @@ resource "aws_instance" "web2" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
 
-  subnet_id = aws_subnet.public-b.id
+  subnet_id = aws_subnet.public_b.id
 
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
@@ -42,3 +42,4 @@ resource "aws_instance" "web2" {
     Name = "web-server-2"
   }
 }
+
