@@ -33,3 +33,8 @@ variable "instance_type" {
   description = "Instance type for EC2 instances"
   type        = string
 }
+
+variable "key_name" {
+  description = "Name of the key pair to use for EC2 instances"
+  type        = string
+}
