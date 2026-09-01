@@ -5,5 +5,5 @@ dnf install nginx -y
 
 systemctl enable nginx
 systemctl start nginx
-
+systemctl restart nginx
 echo "<h1>Hello from $(hostname)</h1>" > /usr/share/nginx/html/index.html
