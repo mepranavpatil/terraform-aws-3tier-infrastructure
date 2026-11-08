@@ -13,11 +13,13 @@ resource "aws_instance" "web1" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
 
-  subnet_id = aws_subnet.public_a.id
+  # Web server is PRIVATE
+  subnet_id = aws_subnet.private_a.id
 
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
   ]
+
   key_name = var.key_name
 
   user_data = file("${path.module}/userdata.sh")
@@ -31,11 +33,13 @@ resource "aws_instance" "web2" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
 
-  subnet_id = aws_subnet.public_b.id
+  # Web server is PRIVATE
+  subnet_id = aws_subnet.private_b.id
 
   vpc_security_group_ids = [
     aws_security_group.ec2_sg.id
   ]
+
   key_name = var.key_name
 
   user_data = file("${path.module}/userdata.sh")
@@ -44,4 +48,3 @@ resource "aws_instance" "web2" {
     Name = "web-server-2"
   }
 }
-
