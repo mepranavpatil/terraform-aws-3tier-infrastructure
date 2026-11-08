@@ -45,10 +45,11 @@ output "rds_security_group_id" {
   value = aws_security_group.rds_sg.id
 }
 
-output "web1_public_ip" {
-  value = aws_instance.web1.public_ip
+
+output "alb_dns_name" {
+  value = aws_lb.portfolio.dns_name
 }
 
-output "web2_public_ip" {
-  value = aws_instance.web2.public_ip
+output "alb_zone_id" {
+  value = aws_lb.portfolio.zone_id
 }
